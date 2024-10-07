@@ -10,7 +10,11 @@ export default {
       red: '#FF0000',
       green: '#00FF48',
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+      },
+    },
   },
   plugins: [],
 };
