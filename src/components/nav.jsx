@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,20 +55,20 @@ function Nav() {
       <div>
         <ul className={`${isOpen ? 'block ml-10' : 'hidden'} mt-4 space-y-2`}>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/"
               className="block text-white hover:text-gray-700 hover:font-medium"
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/contact"
               className="block text-white hover:text-gray-700 hover:font-medium"
             >
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
