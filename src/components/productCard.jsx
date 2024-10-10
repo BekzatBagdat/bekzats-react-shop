@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-function Product() {
+function ProductCard() {
   const url = 'https://v2.api.noroff.dev/online-shop';
 
   const [products, setProducts] = useState([]);
@@ -46,6 +46,7 @@ function Product() {
           <img
             className="object-scale-down w-32 h-32 mt-10"
             src={product.image.url}
+            alt={product.title}
           />
           <h1 className="mt-5">{product.title}</h1>
           <p className="font-bold mt-2 mb-5">{product.discountedPrice} NOK</p>
@@ -55,4 +56,4 @@ function Product() {
   );
 }
 
-export default Product;
+export default ProductCard;
