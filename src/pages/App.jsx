@@ -1,6 +1,6 @@
 import 'typeface-inter';
 import { Routes, Route } from 'react-router-dom';
-import Layout from './layout';
+import Layout from '../components/layout';
 import HomePage from './homepage';
 import ContactPage from './contactpage';
 import CartPage from './cartpage';
