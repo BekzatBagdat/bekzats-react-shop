@@ -1,5 +1,11 @@
+import CartProducts from '../components/cartProducts';
+
 function CartPage() {
-  return <div>Cart page content</div>;
+  return (
+    <div>
+      <CartProducts />
+    </div>
+  );
 }
 
 export default CartPage;
