@@ -44,12 +44,14 @@ function CartProducts() {
       <div className="mt-20 border-t-2 border-gray flex justify-center flex-col items-center">
         <p className="text-3xl font-medium mt-5">Total:</p>
         <p className="mt-5 text-green font-medium">{showTotalPrice} NOK</p>
-        <button
-          onClick={proceedToCheckout}
-          className="mt-5 mb-5  text-white bg-transparent font-semibold  py-2 px-4 border border-white hover:text-black hover:bg-white hover:border-transparent rounded"
-        >
-          Proceed to Checkout
-        </button>
+        {cart.length !== 0 && (
+          <button
+            onClick={proceedToCheckout}
+            className="mt-5 mb-5  text-white bg-transparent font-semibold  py-2 px-4 border border-white hover:text-black hover:bg-white hover:border-transparent rounded"
+          >
+            Proceed to Checkout
+          </button>
+        )}
       </div>
     </div>
   );
