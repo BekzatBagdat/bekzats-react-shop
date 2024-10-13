@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function ProductCards() {
   /*Search Functionality*/
@@ -36,13 +37,14 @@ function ProductCards() {
     getData();
   }, [setProducts]);
 
-  if (isLoading) {
-    return <div>Loading products...</div>;
-  }
+  const navigate = useNavigate();
 
-  if (isError) {
-    return <div>Error loading data</div>;
-  }
+  const viewProduct = (productId) => {
+    navigate(`/productpage/${productId}`);
+  };
+
+  if (isLoading) return <div>Loading products...</div>;
+  if (isError) return <div>Error loading data</div>;
 
   return (
     <>
@@ -91,7 +93,7 @@ function ProductCards() {
               .map((product) => (
                 <div
                   key={product.id}
-                  className="m-5 cursor-pointer flex justify-center items-center flex-col box-border border w-52 hover:scale-110 transition ease delay-110 "
+                  className="m-5 flex justify-center items-center flex-col box-border border w-52 hover:scale-110 transition ease delay-110 "
                 >
                   <img
                     className="object-scale-down w-32 h-32 mt-10"
@@ -102,6 +104,12 @@ function ProductCards() {
                   <p className="font-bold mt-2 mb-5">
                     {product.discountedPrice} NOK
                   </p>
+                  <button
+                    onClick={() => viewProduct(product.id)}
+                    className="mt-5 mb-5  text-white bg-transparent font-semibold  py-2 px-4 border border-white hover:text-black hover:bg-white hover:border-transparent rounded"
+                  >
+                    View Product
+                  </button>
                 </div>
               ))}
           </div>

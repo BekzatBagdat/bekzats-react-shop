@@ -9,6 +9,8 @@ export default {
       white: '#DCDCDC',
       red: '#FF0000',
       green: '#00FF48',
+      gray: '#747474',
+      yellow: '#FFDD00',
     },
     extend: {
       fontFamily: {
